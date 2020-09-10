@@ -1,4 +1,4 @@
-# magento2-docker
+# Magento 2 Docker
 This is architecture build for magento 2.4
 # Tech stack
 - Nginx 1.9
@@ -6,6 +6,18 @@ This is architecture build for magento 2.4
 - Mysql 8.0
 - Elastic Search 7.9.0
 # Install
+Download and copy magento 2.4 source code to src folder from magento.com or use composer
+```
+cd src && composer install
+```
+Add public key and private key to auth.json for basic auth of magento repo
+```
+cp auth.json.sample auth.json
+```
+Pull images and create containers
+```
+docker-compose up --build -d
+```
 Login to php container
 ```
 docker exec -it php7.4-fpm bash

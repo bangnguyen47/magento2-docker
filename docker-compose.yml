@@ -2,7 +2,7 @@ version: "3"
 services:
     nginx:
         image: nginx:1.9
-        container_name: nginx
+        container_name: nginx1.9
         working_dir: /var/www/html
         volumes:
             - ./src:/var/www/html
@@ -24,7 +24,7 @@ services:
             - 9000
     db:
         image: mysql:8.0
-        container_name: mysql
+        container_name: mysql8.0
         volumes:
             - ./mysql/initdb.d:/docker-entrypoint-initdb.d
             - ./mysql/data:/var/lib/mysql
@@ -37,7 +37,7 @@ services:
             - 3306
     elasticsearch:
         image: elasticsearch:7.9.0
-        container_name: elasticsearch
+        container_name: elasticsearch7.9.0
         environment:
             discovery.type: single-node
             ELASTIC_USERNAME: "elastic"
